@@ -17,6 +17,7 @@ pip3 install onnxruntime
 pip3 install -U insightface
 pip3 install opencv-python
 pip3 install numpy
+pip3 install matplotlib
 
 sudo -H pip3 install jupyter
 
