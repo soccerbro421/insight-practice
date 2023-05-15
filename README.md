@@ -1,1 +1,25 @@
 # insight-practice
+
+### Intro
+Help Will for summer internship project
+
+### Dependencies
+* need at least Python 3.9.6
+    * run ```python3 -V``` to see what version you have
+    * if is it is not up to date:
+        * https://stackoverflow.com/questions/69774921/im-using-wsl-how-i-upgrade-python-to-the-last-version-through-the-console
+* Also need `pip3`, Python's package manager
+
+
+
+```
+pip3 install onnxruntime
+pip3 install -U insightface
+pip3 install opencv-python
+pip3 install numpy
+```
+
+### Models
+* Models here refer to machine learning models. They can be thought of as a function that takes input data and produces and output
+* Models will be saved in ```~/.insightface/models/```
+
