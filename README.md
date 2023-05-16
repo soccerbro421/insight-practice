@@ -10,7 +10,7 @@ Help Will for summer internship project
     * run ```python3 -V``` to see what version you have
 * Also need `pip3`, Python's package manager
 * [Optional] can install Jupyter Notebook
-* 
+* We will use Flask as our framework
 
 ```
 pip3 install onnxruntime
@@ -22,7 +22,11 @@ pip3 install -U scikit-learn
 
 sudo -H pip3 install jupyter
 
+pip3 install -U Flask
+
 ```
+
+
 
 ### Models
 * Models here refer to machine learning models. They can be thought of as a function that takes input data and produces and output

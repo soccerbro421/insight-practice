@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face Recognition Demo using Insightface</title>
+</head>
+<body>
+    <h1>Face Recognition Demo using Insightface</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="photo1" id="photo1-input" onchange="previewImage(event, 'photo1-preview')">
+        <img id="photo1-preview" src="#" alt="Selected Photo" style="display: none;">
+        <br>
+        <input type="file" name="photo2" id="photo2-input" onchange="previewImage(event, 'photo2-preview')">
+        <img id="photo2-preview" src="#" alt="Selected Photo" style="display: none;">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <img src="{{ photo1_url }}" alt="Img 1 Placeholder">
+    <img src="{{ photo2_url }}" alt="Img 2 Placeholder">
+    
+    <script>
+        function previewImage(event, previewId) {
+            const input = event.target;
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const preview = document.getElementById(previewId);
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+    {% if photo1_url or photo2_url %}
+        <form method="POST" action="{{ url_for('delete_photos') }}">
+            <input type="hidden" name="delete" value="true">
+            <button type="submit">Reset</button>
+        </form>
+    {% endif %}
+
+</body>
+</html>
+
