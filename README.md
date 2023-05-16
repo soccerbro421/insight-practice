@@ -18,6 +18,7 @@ pip3 install -U insightface
 pip3 install opencv-python
 pip3 install numpy
 pip3 install matplotlib
+pip3 install -U scikit-learn
 
 sudo -H pip3 install jupyter
 
