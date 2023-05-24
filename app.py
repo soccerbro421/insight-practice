@@ -39,8 +39,10 @@ def upload_photo():
         # Get the URLs for the saved photos
         photo1_url = url_for('static', filename=f'output/{photo1_filename}')
         photo2_url = url_for('static', filename=f'output/{photo2_filename}')
+
+        percen = faceComparer.compare_faces(photo1_path, photo2_path)
         
-        return render_template('index.html', photo1_url=photo1_url, photo2_url=photo2_url)
+        return render_template('index.html', photo1_url=photo1_url, photo2_url=photo2_url, percen=percen)
     
     return render_template('index.html')
 

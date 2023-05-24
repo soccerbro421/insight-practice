@@ -34,6 +34,7 @@
         }
     </script>
     {% if photo1_url or photo2_url %}
+        <p>{{percen}}</p>
         <form method="POST" action="{{ url_for('delete_photos') }}">
             <input type="hidden" name="delete" value="true">
             <button type="submit">Reset</button>
